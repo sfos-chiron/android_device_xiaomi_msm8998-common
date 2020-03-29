@@ -37,7 +37,7 @@ on init
 
     # Start qseecomd early as we mount system/ early
     # vold needs keymaster which needs qseecomd
-    start qseecomd
+#    start qseecomd
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
@@ -261,10 +261,10 @@ on property:init.svc.per_mgr=running
 on property:sys.powerctl=*
     stop per_proxy
 
-service qseecomd /vendor/bin/qseecomd
-    class core
-    user root
-    group root
+#service qseecomd /vendor/bin/qseecomd
+#    class core
+#    user root
+#    group root
 
 service thermal-engine /vendor/bin/thermal-engine -T
     class main
